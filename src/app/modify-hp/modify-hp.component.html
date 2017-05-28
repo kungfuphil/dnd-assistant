@@ -1,13 +1,9 @@
 <div class="row">
   <div class="col-xs-12">
-    <input type="number" class="form-control" placeholder="HP" #hpInput>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <button class="btn btn-primary" (click)="onRestoreHealth(player)">Restore</button>
-    <button class="btn btn-success" (click)="onIncreaseHealth(player)">+</button>
-    <button class="btn btn-danger">-</button>
-    <button class="btn btn-info">Set</button>
+    <input type="number" class="form-control" placeholder="HP Mod" id="hpInput" #hpInput>
+        <button class="btn btn-primary" (click)="onRestoreHealth(player)" for="hpInput"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+    <button class="btn btn-success" (click)="onIncreaseHealth(player)"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <button class="btn btn-danger" (click)="onDecreaseHealth(player)"><i class="fa fa-minus" aria-hidden="true"></i></button>
+    <button class="btn btn-info" (click)="onSetHealth(player)">=</button>
   </div>
 </div>

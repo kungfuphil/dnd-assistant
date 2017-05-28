@@ -21,4 +21,29 @@ export class PlayerService {
             this.restoreHealth(playerName);
         }
     }
+
+    decreaseHealth(playerName: string, decrementAmount: number) {
+        const playerIndex = this.players.findIndex(obj => obj.name === playerName);
+
+        let newAmount: number = this.players[playerIndex].currentHp - parseInt(String(decrementAmount)); // See comment in increaseHealth
+
+        if (newAmount < 0) {
+            newAmount = 0;
+        }
+
+        this.players[playerIndex].currentHp = newAmount;
+    }
+
+    setHealth(playerName: string, healthAmount: number) {
+        const playerIndex = this.players.findIndex(obj => obj.name === playerName);
+        const maxHp = this.players[playerIndex].maxHp;
+
+        if (healthAmount > maxHp) {
+            healthAmount = maxHp;
+        }
+        if (healthAmount < 0) {
+            healthAmount = 0;
+        }
+        this.players[playerIndex].currentHp = healthAmount;
+    }
 }

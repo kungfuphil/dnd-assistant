@@ -24,9 +24,19 @@ export class ModifyHpComponent implements OnInit {
   }
 
   onIncreaseHealth(player: Player) {
-    const incrementAmount = this.hpInputRef.nativeElement.value;
-    console.log('Increasing HP by ' + incrementAmount);
+    const incrementAmount = parseInt(this.hpInputRef.nativeElement.value);
+    // console.log('Increasing HP by ' + incrementAmount);
     this.playerService.increaseHealth(player.name, incrementAmount);
+  }
+
+  onDecreaseHealth(player: Player) {
+    const decrementAmount = parseInt(this.hpInputRef.nativeElement.value);
+    this.playerService.decreaseHealth(player.name, decrementAmount);
+  }
+
+  onSetHealth(player: Player) {
+    const newHp = parseInt(this.hpInputRef.nativeElement.value);
+    this.playerService.setHealth(player.name, newHp);
   }
 
 }
