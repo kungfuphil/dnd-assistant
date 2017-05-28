@@ -1,0 +1,5 @@
+<h2>{{player.name}}</h2>
+<p [ngStyle]="{color: getTextColor()}">
+    {{player.currentHp}}/{{player.maxHp}} <i class="fa fa-heart" aria-hidden="true"></i></p>
+    <app-modify-hp [player]="player"></app-modify-hp>
+<p>AC {{player.ac}}</p>
